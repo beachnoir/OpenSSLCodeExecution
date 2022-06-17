@@ -2,9 +2,9 @@
 
 Python PoC demonstrating arbitrary code execution using only the openssl binary. 
 
-The idea is to first use the openssl req command to write a self-signed DER certificate including a specially crafted serial number to disc and then use the enc command with specific key and IV to "decrypt" the DER file to a shared-object ELF file. Finally, one uses openssl’s support for dynamic code execution with the `-engine` flag to execute the ELF file.
+The idea is to first use the `openssl req` command to write a self-signed DER certificate including a specially crafted serial number to disc and then use the `openssl enc` command with specific key and IV to "decrypt" the DER file to a shared-object ELF file. Finally, one uses openssl’s support for dynamic code execution with the `-engine` flag to execute the ELF file.
 
-This was discovered by Anthony Weems as part of [Remote code execution in Managed Anthos Service Mesh control plane](https://lf.lc/vrp/203177829/). The blogpost also contains the exploit code for the full bug which this exploit is based on.
+This was discovered by Anthony Weems as part of [Remote code execution in Managed Anthos Service Mesh control plane](https://lf.lc/vrp/203177829/). The blogpost also contains the exploit code for the full bug which this PoC is based on.
 
 ## Usage
 
